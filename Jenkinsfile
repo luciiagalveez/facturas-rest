@@ -24,7 +24,9 @@ pipeline{
         }
 
         stage("Test del servicio"){
-            echo "Probando el servicio .."
+            steps{
+                echo "Probando el servicio .."
+            }
         }
 
         stage("Cerrar recursos"){
