@@ -31,7 +31,7 @@ pipeline{
 
         stage("Cerrar recursos"){
             steps{
-                bat "stop stop app1"
+                bat "docker stop app1"
                 bat "docker container rm app1"
                 bat "docker image rm lgalvez/app1"
             }
