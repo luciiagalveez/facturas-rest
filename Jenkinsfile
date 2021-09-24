@@ -2,20 +2,20 @@ pipeline{
 
     agent any
 
-    stage("Descargar el código de la app"){
+    stage("Descargar el codigo de la app"){
         steps{
             git "https://github.com/luciiagalveez/facturas-rest.git"
         }
     }
 
-    stage("Creación de imagen"){
+    stage("Creacion de imagen"){
         steps{
             bat "docker build -t lgalvez/app1 ."
         }
         
     }
 
-    stage("Ejecución de contenedor"){
+    stage("Ejecucion de contenedor"){
         steps{
             bat "docker run -d --name app1 -p 8081:8080 lgalvez/app1"
         }
