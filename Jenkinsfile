@@ -2,6 +2,12 @@ pipeline{
 
     agent any
 
+    stage("Descargar el código de la app"){
+        steps{
+            git "https://github.com/luciiagalveez/facturas-rest.git"
+        }
+    }
+
     stage("Creación de imagen"){
         steps{
             bat "docker build -t lgalvez/app1 ."
